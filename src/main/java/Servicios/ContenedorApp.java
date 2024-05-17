@@ -1,5 +1,8 @@
 package Servicios;
 
+import Dao.EspecialidadDAO;
+import Dao.MedicoDAO;
+import Dao.ObraSocialDAO;
 import Dao.PacienteDAO;
 
 public class ContenedorApp {
@@ -7,7 +10,9 @@ public class ContenedorApp {
     private GestionFarmaciaService gestionFarmaciaService;
     private GestionTurnoService gestionTurnoService;
     private PacienteDAO pacienteDAO;
-
+    private MedicoDAO medicoDAO;
+    private EspecialidadDAO especialidadDAO;
+    private ObraSocialDAO obraSocialDAO;
     private static ContenedorApp instance;
 
     private ContenedorApp() {
@@ -15,6 +20,9 @@ public class ContenedorApp {
         atencionMedicoService = AtencionMedicoService.getInstance();
         gestionFarmaciaService = GestionFarmaciaService.getInstance();
         pacienteDAO = PacienteDAO.getInstance();
+        medicoDAO = MedicoDAO.getInstance();
+        especialidadDAO = EspecialidadDAO.getInstance();
+        obraSocialDAO = ObraSocialDAO.getInstance();
     }
 
     public static ContenedorApp getInstance(){
@@ -37,5 +45,17 @@ public class ContenedorApp {
 
     public PacienteDAO getPacienteDAO() {
         return pacienteDAO;
+    }
+
+    public MedicoDAO getMedicoDAO() {
+        return medicoDAO;
+    }
+
+    public EspecialidadDAO getEspecialidadDAO(){
+        return especialidadDAO;
+    }
+
+    public ObraSocialDAO getObraSocialDAO() {
+        return obraSocialDAO;
     }
 }

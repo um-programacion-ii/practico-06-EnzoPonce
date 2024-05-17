@@ -2,17 +2,13 @@ package org.example.entidades;
 
 public class Medico {
     private String nombre;
-    private Especialidad especialidad;
-    private boolean particular;
+    private String especialidad;
+    public String obraSocial;
 
-    public Medico() {
-    }
-
-
-    public Medico(String nombre, Especialidad especialidad, boolean particular){
-        this.nombre= nombre;
+    public Medico(String nombre, String especialidad, String obraSocial){
+        this.nombre = nombre;
         this.especialidad = especialidad;
-        this.particular = particular;
+        this.obraSocial = obraSocial;
     }
 
     public String getNombre() {
@@ -23,19 +19,19 @@ public class Medico {
         this.nombre = nombre;
     }
 
-    public Especialidad getEspecialidad() {
+    public String getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(Especialidad especialidad) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 
-    public boolean isParticular() {
-        return particular;
+    public String getObraSocial() {
+        return obraSocial;
     }
 
-    public void setParticular(boolean particular) {
-        this.particular = particular;
+    public void setObraSocial(String obraSocial) {
+        this.obraSocial = obraSocial;
     }
 }

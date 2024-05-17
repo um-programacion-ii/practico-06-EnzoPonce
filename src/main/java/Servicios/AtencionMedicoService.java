@@ -31,19 +31,19 @@ public class AtencionMedicoService {
             pacientesAtendidos.put(medico, new ArrayList<>());
         }
         pacientesAtendidos.get(medico).add(paciente);
-        System.out.println("El paciente" + paciente.getNombre() + "esta siendo atendido por " + medico.getNombre());
+        System.out.println("El paciente " + paciente.getNombre() + " esta siendo atendido por " + medico.getNombre());
     }
 
     public void generarReseta(Paciente paciente, Medico medico){
         if (pacientesAtendidos.containsKey(medico) && pacientesAtendidos.get(medico).contains(paciente)){
             boolean recetaGenerada = Math.random() < 0.5;
             if (recetaGenerada) {
-                System.out.println("El medico" + medico.getNombre() + "generó una receta para" + paciente.getNombre() + paciente.getId());
+                System.out.println("El " + medico.getNombre() + " generó una receta para " + paciente.getNombre());
             } else {
                 System.out.println("No se generó una receta");
             }
         } else {
-        System.out.println("El medico" + medico.getNombre() + "no está atendiendo al paciente" + paciente.getNombre() + paciente.getId());
+        System.out.println("El " + medico.getNombre() + " no está atendiendo al paciente " + paciente.getNombre());
         }
     }
 
